@@ -1,7 +1,9 @@
 import {interpolate, useCurrentFrame} from 'remotion';
 import {COLOR_1} from './config';
 
-export const Subtitle: React.FC = () => {
+export const Subtitle: React.FC<{
+	titleText: string;
+}> = ({titleText}) => {
 	const frame = useCurrentFrame();
 	const opacity = interpolate(frame, [0, 30], [0, 1]);
 	return (
@@ -9,6 +11,7 @@ export const Subtitle: React.FC = () => {
 			style={{
 				fontFamily: 'Helvetica, Arial',
 				fontSize: 40,
+				color: COLOR_1,
 				textAlign: 'center',
 				position: 'absolute',
 				bottom: 140,
@@ -16,15 +19,7 @@ export const Subtitle: React.FC = () => {
 				opacity,
 			}}
 		>
-			Edit{' '}
-			<code
-				style={{
-					color: COLOR_1,
-				}}
-			>
-				src/Video.tsx
-			</code>{' '}
-			and save to reload.
+			{titleText}
 		</div>
 	);
 };

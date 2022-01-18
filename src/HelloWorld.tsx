@@ -6,7 +6,8 @@ import {Title} from './HelloWorld/Title';
 export const HelloWorld: React.FC<{
 	titleText: string;
 	titleColor: string;
-}> = ({titleText, titleColor}) => {
+	subTitleText: string;
+}> = ({titleText, titleColor, subTitleText}) => {
 	const frame = useCurrentFrame();
 	const videoConfig = useVideoConfig();
 
@@ -31,7 +32,7 @@ export const HelloWorld: React.FC<{
 					<Title titleText={titleText} titleColor={titleColor} />
 				</Sequence>
 				<Sequence from={transitionStart + 50}>
-					<Subtitle />
+					<Subtitle titleText={subTitleText} />
 				</Sequence>
 			</div>
 		</div>

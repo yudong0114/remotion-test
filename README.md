@@ -10,19 +10,19 @@ Welcome to your Remotion project!
 
 ## Commands
 
-**Start Preview**
+**プレビュー**
 
 ```console
 npm start
 ```
 
-**Render video**
+**MP4書き出し**
 
 ```console
 npm run build
 ```
 
-**Server render demo**
+**サーバーサイドレンダリングで動画レスポンス**
 
 ```console
 npm run server
